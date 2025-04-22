@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compte à Rebours - Institut Technique Saint-Joseph</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .animated-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 5rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-animation 3s ease infinite, bounce 1.5s infinite;
+            text-align: center;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .countdown div {
+            background: none;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .countdown div span {
+            font-size: 3.6rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .countdown div div {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .bg-gradient-orange {
+            background: linear-gradient(90deg, #ee8028, #f5b992); /* Dégradé orange */
+            background-size: cover;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <section id="portes-ouvertes" class="py-16 bg-gradient-orange">
+        <div class="section-container">
+            <h2 class="animated-title">Journée Portes Ouvertes</h2>
+            <div class="image-container">
+                <img src="https://i.imgur.com/NzJ4G0g.png" alt="Journée Portes Ouvertes" class="mx-auto">
+            </div>
+            <div class="countdown-container">
+
+                <div id="countdown" class="countdown">
+                    <div style="flex: 1; min-width: 80px;">
+                        <span id="days">00</span>
+                        <div>Jours</div>
+                    </div>
+                    <div style="flex: 1; min-width: 80px;">
+                        <span id="hours">00</span>
+                        <div>Heures</div>
+                    </div>
+                    <div style="flex: 1; min-width: 80px;">
+                        <span id="minutes">00</span>
+                        <div>Minutes</div>
+                    </div>
+                    <div style="flex: 1; min-width: 80px;">
+                        <span id="seconds">00</span>
+                        <div>Secondes</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const eventDate = new Date('May 17, 2025 15:00:00').getTime(); // Modification de l'heure à 15h
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            } else {
+                document.getElementById('countdown').innerHTML = '<p>L\'événement est en cours ou terminé !</p>';
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>

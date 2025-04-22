@@ -1,0 +1,67 @@
+﻿@charset "UTF-8"; * {margin:0; padding:0; text-indent:0; }
+ .s1 { color: #464646; font-family:"Lucida Sans", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 35pt; }
+ h2 { color: #FFF; font-family:"Source Sans Pro", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 17pt; }
+ .s2 { color: #FBF1E8; font-family:Tahoma, sans-serif; font-style: normal; font-weight: bold; text-decoration: underline; font-size: 14pt; }
+ .s3 { color: #FBF1E8; font-family:"Lucida Sans", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 14pt; }
+ h4 { color: #464646; font-family:"Source Sans Pro", sans-serif; font-style: normal; font-weight: bold; text-decoration: underline; font-size: 14.5pt; }
+ p { color: #464646; font-family:"Source Sans Pro", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13.5pt; margin:0pt; }
+ .a, a { color: #464646; font-family:"Source Sans Pro", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+ .h1, h1 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 17.5pt; }
+ .s5 { color: #2A2A2A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13.5pt; }
+ .s6 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 13pt; }
+ .s7 { color: #85B5E4; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 13pt; }
+ .s8 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 13pt; }
+ .s9 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 17.5pt; }
+ .s10 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 13pt; }
+ .s11 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 13pt; }
+ .s12 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 11pt; }
+ .s13 { color: #CDE1F4; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 7.5pt; }
+ .s14 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 7.5pt; }
+ .s15 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 7.5pt; }
+ .s16 { color: #85B5E4; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 13pt; }
+ .s17 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 7.5pt; vertical-align: 4pt; }
+ .s18 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 9pt; }
+ .s19 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 9pt; }
+ .s20 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10.5pt; }
+ .s21 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 15.5pt; }
+ .s22 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 15.5pt; }
+ .s23 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 15.5pt; }
+ .s24 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 15.5pt; }
+ .h3 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 15.5pt; }
+ .s25 { color: #CDE1F4; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 15.5pt; }
+ .s26 { color: #85B5E4; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 15.5pt; }
+ .s27 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 9pt; }
+ .s28 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 9pt; }
+ .s29 { color: #F0F6FB; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 9pt; }
+ .s30 { color: #3A3A3A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 11.5pt; }
+ .s32 { color: #2A2A2A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+ .s33 { color: #4F4F4F; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+ .s35 { color: #2A2A2A; font-family:Arial, sans-serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 13pt; }
+ .s36 { color: #2A2A2A; font-family:"Times New Roman", serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 14.5pt; }
+ .s37 { color: #3A3A3A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 11.5pt; }
+ .s38 { color: #2A2A2A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 11.5pt; }
+ .s39 { color: #2A2A2A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 11pt; }
+ .s40 { color: #3A3A3A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+ .s41 { color: #3A3A3A; font-family:"Courier New", monospace; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12.5pt; }
+ .s42 { color: #2A2A2A; font-family:"Courier New", monospace; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12.5pt; }
+ .s43 { color: #3A3A3A; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 11pt; }
+ .s44 { color: #2A2A2A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+ .s45 { color: #2A2A2A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 16pt; }
+ .s46 { color: #3A3A3A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 11.5pt; }
+ .s47 { color: #4F4F4F; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 11.5pt; }
+ .s48 { color: #3A3A3A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 11pt; }
+ .s49 { color: #2A2A2A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 11.5pt; }
+ .s50 { color: #3A3A3A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 16pt; }
+ .s51 { color: #AFAFAF; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 6.5pt; vertical-align: 1pt; }
+ .s52 { color: #4F4F4F; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 6.5pt; vertical-align: 1pt; }
+ .s53 { color: #4F4F4F; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 16pt; }
+ .s54 { color: #2A2A2A; font-family:"Courier New", monospace; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12.5pt; vertical-align: 1pt; }
+ .s55 { color: #3A3A3A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 16pt; }
+ .s56 { color: #161616; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 16pt; }
+ .s57 { color: #2A2A2A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 11.5pt; }
+ .s58 { color: black; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+ .s59 { color: #2A2A2A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 13pt; }
+ .s60 { color: #3A3A3A; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+ .s61 { color: #2A2A2A; font-family:"Times New Roman", serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 11.5pt; }
+ .s62 { color: #4F4F4F; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 8pt; }
+ table, tbody {vertical-align: top; overflow: visible; }

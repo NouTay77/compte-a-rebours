@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institut Technique Saint Joseph La Louvière - Formation professionnelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    .gradient-text {
+        background: linear-gradient(90deg, #ee8028, #f5b992);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .card-hover {
+        transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: #ee8028;
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+    .hero-pattern {
+        background-image: radial-gradient(circle at 10% 20%, rgba(255, 128, 40, 0.1) 0%, rgba(245, 185, 146, 0.1) 20%), radial-gradient(circle at 90% 80%, rgba(255, 128, 40, 0.1) 0%, rgba(245, 185, 146, 0.1) 20%);
+    }
+
+    .school-badge {
+        width: 120px;
+        height: 120px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        border: 5px solid #dadfe1;
+    }
+
+    .course-card {
+        transition: all 0.3s ease;
+        border-top: 4px solid transparent;
+    }
+
+    .course-card:hover {
+        transform: translateY(-5px);
+        border-top-color: #ee8028;
+    }
+
+    .stats-item {
+        position: relative;
+        padding-left: 3rem;
+    }
+
+    .stats-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: rgba(255, 128, 40, 0.1);
+        border-radius: 0.5rem;
+    }
+</style>
+
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="school-badge mr-4">
+                        <i class="fas fa-graduation-cap text-4xl gradient-text"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold">Institut Technique Saint Joseph</span>
+                        <span class="text-xl font-bold gradient-text block">La Louvière</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#about" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">L'école</a>
+                        <a href="#formations" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Formations</a>
+                        <a href="#infrastructures" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Infrastructures</a>
+                        <!-- <a href="#admission" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Admission</a> -->
+                        <a href="https://noutay77.github.io/activites" target="_blank" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Activités</a>
+                        <a href="#contact" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Contact</a>
+                        <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-medium transition duration-300">
+                            S'inscrire
+                        </a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-500 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-100">L'école</a>
+                <a href="#formations" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-100">Formations</a>
+                <a href="#infrastructures" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-100">Infrastructures</a>
+                <a href="#admission" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-100">Admission</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-100">Contact</a>
+                <a href="#contact" class="block w-full text-center bg-blue-500 text-white px-3 py-2 rounded-md text-base font-medium mt-2">
+                    S'inscrire
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Formations techniques <br>
+                        <span class="gradient-text">d'excellence</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-600 mb-8">
+                        Préparation aux métiers de demain
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                        Notre école technique vous forme aux métiers porteurs avec des enseignants experts et des équipements de pointe.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#formations" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">
+                            Découvrir nos formations
+                        </a>
+                        <a href="#contact" class="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition duration-300 transform hover:scale-105">
+                            Nous contacter
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-full max-w-lg rounded-xl overflow-hidden shadow-2xl">
+                            <img src="C:\Users\utilisateur\Downloads\Sites Internet\Porte ouverte.png" alt="Étudiants en atelier" class="w-full h-full object-cover">
+
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-xl shadow-lg">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white mr-3">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500">Inscriptions</p>
+                                    <p class="font-medium">Ouvertes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="stats-item">
+                    <h3 class="text-3xl font-bold text-blue-500 mb-2">95%</h3>
+                    <p class="text-gray-600">Taux d'insertion professionnelle</p>
+                </div>
+                <div class="stats-item">
+                    <h3 class="text-3xl font-bold text-purple-500 mb-2">15+</h3>
+                    <p class="text-gray-600">Formations techniques disponibles</p>
+                </div>
+                <div class="stats-item">
+                    <h3 class="text-3xl font-bold text-green-500 mb-2">100%</h3>
+                    <p class="text-gray-600">Équipements professionnels</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Notre école technique et professionnelle</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="École Technique ITSJLL" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h3 class="text-2xl font-semibold mb-6">Une pédagogie axée sur la pratique</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Fondée en 1995, notre école technique et professionnelle forme chaque année des d'étudiants aux métiers techniques en tension. Notre approche pédagogique unique combine théorie et pratique avec un accent particulier sur les travaux en atelier et les stages en entreprise.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Nos enseignants sont tous des professionnels en activité qui apportent leur expertise concrète du terrain. Les formations sont constamment actualisées pour répondre aux besoins des entreprises locales et nationales.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="flex items-center bg-blue-50 px-4 py-2 rounded-lg">
+                            <div class="w-4 h-4 rounded-full bg-blue-500 mr-2"></div>
+                            <span>Ateliers équipés</span>
+                        </div>
+                        <div class="flex items-center bg-purple-50 px-4 py-2 rounded-lg">
+                            <div class="w-4 h-4 rounded-full bg-purple-500 mr-2"></div>
+                            <span>Partenariats entreprises</span>
+                        </div>
+                        <div class="flex items-center bg-green-50 px-4 py-2 rounded-lg">
+                            <div class="w-4 h-4 rounded-full bg-green-500 mr-2"></div>
+                            <span>Diplômes reconnus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formations Section -->
+    <section id="formations" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nos formations</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+                    Découvrez nos formations techniques conçues pour répondre aux besoins du marché de l'emploi.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Formation 1 - Mécanique industrielle -->
+                <div class="bg-white rounded-xl p-6 shadow-md course-card">
+                    <div class="w-14 h-14 rounded-lg bg-blue-100 flex items-center justify-center text-blue-500 mb-6">
+                        <i class="fas fa-cogs text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Mécanique industrielle</h3>
+                    <p class="text-gray-600 mb-6">
+                        Formation complète en maintenance industrielle, usinage et automatisation des systèmes mécaniques.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Durée: 3 ans </span>
+                        <a href="mecanique-industrielle.html" class="text-blue-500 hover:underline text-sm font-medium">
+                            En savoir plus →
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Formation 2 - Électricité industrielle -->
+                <div class="bg-white rounded-xl p-6 shadow-md course-card">
+                    <div class="w-14 h-14 rounded-lg bg-purple-100 flex items-center justify-center text-purple-500 mb-6">
+                        <i class="fas fa-bolt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Électricité industrielle</h3>
+                    <p class="text-gray-600 mb-6">
+                        Maîtrise des installations électriques, automatismes industriels et énergies renouvelables.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Durée: 3 ans</span>
+                        <a href="https://drive.google.com/file/d/1IWYcPEOoXElFoWjuhi8QwMEgNM1ZKwBC/view?usp=sharing" target="_blank" class="text-blue-500 hover:underline text-sm font-medium">En savoir plus →</a>
+                    </div>
+                </div>
+                
+                <!-- Formation 3 - Usineur -->
+                <div class="bg-white rounded-xl p-6 shadow-md course-card">
+                    <div class="w-14 h-14 rounded-lg bg-red-100 flex items-center justify-center text-red-500 mb-6">
+                        <i class="fas fa-cogs text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Usineur</h3>
+                    <p class="text-gray-600 mb-6">
+                        Formation complète en usinage conventionnel et numérique (tournage, fraisage) pour la fabrication de pièces mécaniques.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Durée: 2 ans</span>
+                        <a href="https://drive.google.com/file/d/13uEJqobKE0iMTkUTCAetVMclQYHUYNvu/view?usp=sharing" target="_blank" class="text-blue-500 hover:underline text-sm font-medium">En savoir plus →</a>
+                    </div>
+                </div>
+                
+                <!-- Formation 4 - Bâtiment et travaux publics -->
+                <div class="bg-white rounded-xl p-6 shadow-md course-card">
+                    <div class="w-14 h-14 rounded-lg bg-yellow-100 flex items-center justify-center text-yellow-500 mb-6">
+                        <i class="fas fa-hard-hat text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Bâtiment et travaux publics</h3>
+                    <p class="text-gray-600 mb-6">
+                        Techniques de construction, lecture de plans, matériaux et réglementation du bâtiment.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Durée: 18 mois</span>
+                        <a href="https://drive.google.com/file/d/1IWYcPEOoXElFoWjuhi8QwMEgNM1ZKwBC/view?usp=sharing" target="_blank" class="text-blue-500 hover:underline text-sm font-medium">En savoir plus →</a>
+                    </div>
+                </div>
+                        
+                <!-- Formation 5 - Soudure -->
+                <div class="bg-white rounded-xl p-6 shadow-md course-card">
+                    <div class="w-14 h-14 rounded-lg bg-blue-100 flex items-center justify-center text-blue-500 mb-6">
+                        <i class="fas fa-fire text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Soudure</h3>
+                    <p class="text-gray-600 mb-6">
+                        Maîtrise des techniques de soudage (MIG, TIG, arc) et des procédures de sécurité pour travailler dans les industries métallurgiques et de construction.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Durée: 18 mois</span>
+                        <a href="https://drive.google.com/file/d/1xvMwWOKU_cB7iiKzjzbfbZ51ERh5gPO6/view?usp=sharing" target="_blank" class="text-blue-500 hover:underline text-sm font-medium">En savoir plus →</a>
+                    </div>
+                </div>
+  
+                <!-- Formation 6 - Menuiserie -->
+                <div class="bg-white rounded-xl p-6 shadow-md course-card">
+                    <div class="w-14 h-14 rounded-lg bg-purple-100 flex items-center justify-center text-purple-500 mb-6">
+                        <i class="fas fa-tree text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Menuiserie</h3>
+                    <p class="text-gray-600 mb-6">
+                        Apprentissage des techniques de travail du bois pour la fabrication de meubles, éléments de construction et agencements intérieurs.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Durée: 2 ans</span>
+                        <a href="https://drive.google.com/file/d/1tmPkJXlyHsebcEfrsxPwkfN6jemK41BB/view?usp=sharing" target="_blank" class="text-blue-500 hover:underline text-sm font-medium">En savoir plus →</a>
+                    </div>
+                </div>
+                
+                <!-- Formation 7 - Dessinateur en construction -->
+                <div class="bg-white rounded-xl p-6 shadow-md course-card">
+                    <div class="w-14 h-14 rounded-lg bg-green-100 flex items-center justify-center text-green-500 mb-6">
+                        <i class="fas fa-ruler-combined text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Dessinateur en construction</h3>
+                    <p class="text-gray-600 mb-6">
+                        Formation aux logiciels de DAO/CAO pour la réalisation de plans techniques dans le secteur du bâtiment et des travaux publics.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Durée: 2 ans</span>
+                        <a href="#" class="text-blue-500 hover:underline text-sm font-medium">En savoir plus →</a>
+                    </div>
+                </div>
+              
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-blue-500 font-medium hover:text-blue-700">
+                    Voir toutes nos formations
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infrastructures Section -->
+    <section id="infrastructures" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nos infrastructures</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+                    Des équipements professionnels pour une formation au plus près de la réalité du terrain.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Atelier mécanique" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Ateliers équipés</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Nos 15 ateliers spécialisés sont équipés du même matériel que celui utilisé en entreprise. Chaque étudiant dispose de son poste de travail avec les outils et machines nécessaires à sa formation.
+                    </p>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Machines-outils à commande numérique</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Postes de soudure dernier cri</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Bancs de test électriques et électroniques</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Salles informatiques avec logiciels professionnels</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mx-auto mb-4">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Effectifs réduits</h3>
+                    <p class="text-gray-600">Maximum 15 étudiants par groupe pour un suivi personnalisé</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                    <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-500 mx-auto mb-4">
+                        <i class="fas fa-briefcase text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Stages en entreprise</h3>
+                    <p class="text-gray-600">12 à 16 semaines de stage selon la formation</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-green-500 mx-auto mb-4">
+                        <i class="fas fa-certificate text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Certifications</h3>
+                    <p class="text-gray-600">Préparation aux certifications professionnelles reconnues</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+/    <!-- Admission Section 
+    <section id="admission" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Procédure d'admission</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+                    Comment intégrer notre école technique ? Découvrez les étapes pour rejoindre nos formations.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Conditions d'admission</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white">
+                                    <span class="font-bold">1</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Niveau requis</h4>
+                                <p class="mt-1 text-gray-600">
+                                    Être titulaire d'un diplôme de fin d'études secondaires ou équivalent. Certaines formations nécessitent des prérequis spécifiques.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white">
+                                    <span class="font-bold">2</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Dossier de candidature</h4>
+                                <p class="mt-1 text-gray-600">
+                                    Fournir un CV, une lettre de motivation, les copies des diplômes et bulletins scolaires.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white">
+                                    <span class="font-bold">3</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900">Entretien de motivation</h4>
+                                <p class="mt-1 text-gray-600">
+                                    Rencontre avec un formateur pour évaluer la motivation et l'adéquation avec la formation choisie.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-8 shadow-inner">
+                    <h3 class="text-2xl font-semibold mb-6">Calendrier 2023-2024</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="text-gray-700">Ouverture des inscriptions</span>
+                            <span class="font-medium">1er septembre 2023</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="text-gray-700">Date limite de dépôt des dossiers</span>
+                            <span class="font-medium">15 juin 2024</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="text-gray-700">Tests et entretiens</span>
+                            <span class="font-medium">Juin - juillet 2024</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b border-gray-200">
+                            <span class="text-gray-700">Publication des résultats</span>
+                            <span class="font-medium">15 juillet 2024</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-700">Rentrée scolaire</span>
+                            <span class="font-medium">4 septembre 2024</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="#" class="w-full inline-block text-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                            Télécharger le dossier d'inscription
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Testimonials Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Témoignages</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+                    Ce que nos anciens élèves et partenaires disent de nous
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Témoignage 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Marie D." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Marie D.</h4>
+                            <p class="text-sm text-gray-500">Ancienne élève - Mécanique auto</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "La formation en mécanique auto m'a permis d'acquérir toutes les compétences nécessaires pour monter mon propre garage. Les formateurs sont très compétents et les ateliers super bien équipés."
+                    </p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Témoignage 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Thomas L." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Thomas L.</h4>
+                            <p class="text-sm text-gray-500">Ancien élève - Informatique industrielle</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "J'ai été embauché directement après mon stage de fin de formation. L'école a vraiment des bons contacts avec les entreprises locales et les cours sont très concrets."
+                    </p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Témoignage 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Pierre M." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Pierre M.</h4>
+                            <p class="text-sm text-gray-500">Directeur - Entreprise partenaire</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Nous recrutons régulièrement des étudiants de l'école JLL car ils arrivent opérationnels tout de suite. Le niveau technique est excellent et l'école sait s'adapter aux évolutions de nos métiers."
+                    </p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section des activités -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold mb-6">Nos Activités</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 shadow-md rounded">
+                    <h2 class="text-xl font-bold text-gray-800">Activité 1</h2>
+                    <p class="text-gray-600">Description de l’activité...</p>
+                    <a href="#" target="_blank" class="text-blue-500 hover:underline text-sm font-medium">En savoir plus →</a>
+                </div>
+                <div class="bg-white p-6 shadow-md rounded">
+                    <h2 class="text-xl font-bold text-gray-800">Activité 2</h2>
+                    <p class="text-gray-600">Description de l’activité...</p>
+                    <a href="#" target="_blank" class="text-blue-500 hover:underline text-sm font-medium">En savoir plus →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nous contacter</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+                    Vous avez des questions sur nos formations ou souhaitez visiter l'école ? Contactez-nous, nous serons ravis de vous répondre.
+                </p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form class="bg-gray-50 rounded-xl p-8 shadow-inner">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nom</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300" placeholder="Votre nom">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300" placeholder="Votre email">
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Sujet</label>
+                            <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300">
+                                <option value="">Sélectionnez un sujet</option>
+                                <option value="admission">Admission</option>
+                                <option value="formation">Information sur une formation</option>
+                                <option value="visite">Demande de visite</option>
+                                <option value="autre">Autre demande</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300" placeholder="Votre message"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-xl p-8 shadow-md h-full">
+                        <h3 class="text-xl font-semibold mb-6">Coordonnées</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-4 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-700">Adresse</h4>
+                                    <p class="text-gray-600">Rue Gustave Böel, 23<br>7100 La Louvière, Belgique</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-500 mr-4 flex-shrink-0">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-700">Téléphone</h4>
+                                    <a href="tel:+3221234567" class="text-gray-600 hover:text-blue-500">+32 64 31 18 58</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-500 mr-4 flex-shrink-0">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-700">Email</h4>
+                                    <a href="mailto:info@ecolejll.be" class="text-blue-500 hover:underline">infos@itsjll.be</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 mr-4 flex-shrink-0">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-700">Horaires</h4>
+                                    <p class="text-gray-600">Lundi - Vendredi: 8h - 17h<br>Samedi: 9h - 12h (juin-juillet)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12">
+                            <h4 class="font-medium text-gray-700 mb-4">Visitez notre école</h4>
+                            <p class="text-gray-600 mb-4">
+                                Nous organisons des journées portes ouvertes tout au long de l'année. Consultez notre calendrier pour connaître les prochaines dates.
+                            </p>
+                            <a href="#" class="inline-flex items-center text-blue-500 font-medium hover:text-blue-700">
+                                Voir le calendrier des portes ouvertes
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full bg-gray-200">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2539.005302648963!2d4.176174!3d50.478245!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c237caf1e61e33%3A0xcafa259321629f75!2sRue%20Gustave%20Bo%C3%ABl%2023%2C%207100%20La%20Louvi%C3%A8re!5e0!3m2!1sfr!2sbe!4v1744318381240!5m2!1sfr!2sbe" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <div class="school-badge mr-4">
+                            <i class="fas fa-graduation-cap text-4xl gradient-text"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold">Institut Technique Saint Joseph</span>
+                            <span class="text-xl font-bold gradient-text block">La Louvière</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 max-w-xs">
+                        Formations techniques d'excellence pour les métiers de demain.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://www.facebook.com/instituttechniquesaintjosephlalouviere" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-500 text-white flex items-center justify-center transition duration-300" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/instituttechniquesaintjosephla/" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-pink-500 text-white flex items-center justify-center transition duration-300" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@itsjlalouviere?is_from_webapp=1&sender_device=pc" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-purple-500 text-white flex items-center justify-center transition duration-300" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-16">
+                    <div>
+                        <h4 class="text-gray-300 font-medium mb-4">Navigation</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">L'école</a></li>
+                            <li><a href="#formations" class="text-gray-400 hover:text-white transition duration-300">Formations</a></li>
+                            <li><a href="#infrastructures" class="text-gray-400 hover:text-white transition duration-300">Infrastructures</a></li>
+                            <li><a href="#admission" class="text-gray-400 hover:text-white transition duration-300">Admission</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-gray-300 font-medium mb-4">Formations</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Mécanique</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Électricité</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Informatique</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Bâtiment</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Robotique</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 École Technique ITSJLL. Tous droits réservés.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Conditions d'utilisation</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Accessibilité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
